@@ -3,79 +3,446 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Flowely</title>
-  <link rel="icon" href="public/logo.svg" type="image/svg+xml" />
+  <title>Privacy Policy | Flowely</title>
+  <meta name="description" content="Read Flowely's privacy policy, including how desktop data is stored locally, what information we do and do not collect, and how payments and support communications are handled." />
+  <link rel="icon" href="public/flowely-nav-lightmode.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', -apple-system, sans-serif; color: #0f172a; background: #fff; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    a { color: #158F77; text-decoration: none; }
+
+    :root {
+      --accent: #158f77;
+      --accent-soft: rgba(21, 143, 119, 0.12);
+      --primary: #0d3052;
+      --bg: #eef4f8;
+      --surface: rgba(255, 255, 255, 0.82);
+      --surface-strong: #ffffff;
+      --text: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --border: rgba(148, 163, 184, 0.22);
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --radius: 24px;
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top center, rgba(21, 143, 119, 0.10), transparent 24%),
+        radial-gradient(circle at 88% 16%, rgba(13, 48, 82, 0.08), transparent 24%),
+        linear-gradient(180deg, #f8fbfd 0%, #eef4f8 100%);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .container { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
-    .back { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 500; color: #158F77; margin-bottom: 32px; }
-    h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
-    .updated { font-size: 13px; color: #94a3b8; margin-bottom: 40px; }
-    h2 { font-size: 18px; font-weight: 700; margin-top: 32px; margin-bottom: 12px; }
-    p, li { font-size: 15px; color: #475569; margin-bottom: 12px; }
-    ul { padding-left: 24px; margin-bottom: 12px; }
-    li { margin-bottom: 6px; }
+
+    .shell {
+      width: min(1240px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 28px;
+      padding: 18px 22px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 22px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero {
+      padding: 30px;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at top left, rgba(52, 211, 153, 0.12), transparent 22%),
+        linear-gradient(135deg, #0d3052 0%, #16385b 48%, #158f77 100%);
+      color: #fff;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #d1fae5;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      margin: 18px 0 14px;
+      max-width: 10ch;
+    }
+
+    .hero p {
+      max-width: 820px;
+      color: rgba(226, 232, 240, 0.9);
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .sidebar,
+    .content-card {
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(16px);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 20px;
+      padding: 22px;
+    }
+
+    .sidebar h2 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 18px;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .toc {
+      display: grid;
+      gap: 10px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .toc a:hover {
+      text-decoration: none;
+      background: rgba(21, 143, 119, 0.08);
+      color: var(--accent);
+    }
+
+    .sidebar-note {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(148, 163, 184, 0.18);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .content {
+      display: grid;
+      gap: 18px;
+    }
+
+    .content-card {
+      padding: 26px;
+    }
+
+    .content-card h2 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 24px;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .content-card p,
+    .content-card li {
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+
+    .content-card p + p,
+    .content-card p + ul,
+    .content-card ul + p {
+      margin-top: 12px;
+    }
+
+    .content-card ul {
+      padding-left: 20px;
+      margin-top: 12px;
+    }
+
+    .content-card li + li {
+      margin-top: 8px;
+    }
+
+    .callout {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(21, 143, 119, 0.08);
+      border: 1px solid rgba(21, 143, 119, 0.12);
+      margin-top: 14px;
+    }
+
+    .callout strong {
+      display: block;
+      color: var(--text);
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(1240px, calc(100% - 20px));
+        padding-top: 18px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero,
+      .content-card,
+      .sidebar {
+        padding: 20px;
+      }
+
+      .hero h1 {
+        max-width: 100%;
+      }
+
+      .brand-copy strong {
+        font-size: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="/" class="back">&larr; Back to Flowely</a>
-    <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: 20 March 2026</p>
+  <div class="shell">
+    <header class="topbar">
+      <a href="/" class="brand">
+        <img src="public/flowely-nav-lightmode.png" alt="Flowely logo" />
+        <span class="brand-copy">
+          <strong>Flowely</strong>
+          <span>NDIS invoice software</span>
+        </span>
+      </a>
+      <a href="/" class="back-link">← Back to Flowely</a>
+    </header>
 
-    <h2>Overview</h2>
-    <p>Flowely is a desktop application for NDIS invoice compliance checking. We are committed to protecting your privacy. This policy explains what data we collect (very little) and how we handle it.</p>
+    <section class="hero">
+      <div class="eyebrow">
+        <span>Privacy</span>
+      </div>
+      <h1>Your data stays under your control.</h1>
+      <p>Flowely is designed as a local-first desktop product for providers who care about privacy, participant confidentiality, and keeping sensitive information out of unnecessary cloud systems.</p>
+      <div class="hero-meta">
+        <div class="meta-pill">Last updated: 20 March 2026</div>
+        <div class="meta-pill">Local-first desktop app</div>
+        <div class="meta-pill">No analytics in the app</div>
+      </div>
+    </section>
 
-    <h2>Data Storage</h2>
-    <p>Flowely is a <strong>local-first, offline application</strong>. All data you enter — including participant details, NDIS numbers, invoices, and provider information — is stored exclusively on your computer in a local SQLite database file.</p>
-    <ul>
-      <li>No data is uploaded to any server or cloud service.</li>
-      <li>No account or login is required to use the application.</li>
-      <li>Your data remains entirely under your control.</li>
-      <li>The database file is located in your Documents folder (~/Documents/Flowely/).</li>
-    </ul>
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>On This Page</h2>
+        <nav class="toc">
+          <a href="#overview">Overview</a>
+          <a href="#storage">Data Storage</a>
+          <a href="#not-collect">What We Do Not Collect</a>
+          <a href="#may-collect">What We May Collect</a>
+          <a href="#updates">Software Updates</a>
+          <a href="#third-parties">Third-Party Services</a>
+          <a href="#backups">Backup & Portability</a>
+          <a href="#changes">Changes to This Policy</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p class="sidebar-note">This page is written to be readable first. If something is unclear, email us and ask.</p>
+      </aside>
 
-    <h2>What We Do Not Collect</h2>
-    <ul>
-      <li>We do not collect personal information about you or your participants.</li>
-      <li>We do not collect NDIS numbers, names, addresses, or any invoice data.</li>
-      <li>We do not use analytics, tracking cookies, or telemetry in the application.</li>
-      <li>We do not have access to your local database.</li>
-    </ul>
+      <main class="content">
+        <section class="content-card" id="overview">
+          <h2>Overview</h2>
+          <p>Flowely is desktop software for NDIS invoice compliance checking, participant record handling, budget tracking, and export preparation. We built it to reduce admin stress without creating a privacy tradeoff.</p>
+          <div class="callout">
+            <strong>Short version</strong>
+            <p>Most of the sensitive information you enter into Flowely stays on your computer, not on our servers.</p>
+          </div>
+        </section>
 
-    <h2>What We May Collect</h2>
-    <p>If you choose to subscribe to Flowely via our payment processor (Stripe), we collect:</p>
-    <ul>
-      <li>Your email address (for license delivery and support).</li>
-      <li>Payment information is handled entirely by Stripe. We do not store credit card numbers.</li>
-    </ul>
-    <p>If you contact us via email, we retain your correspondence to provide support.</p>
+        <section class="content-card" id="storage">
+          <h2>Data Storage</h2>
+          <p>Flowely is a local-first application. Data you enter, including participant details, NDIS numbers, invoices, provider details, and budgets, is stored on your device in a local SQLite database.</p>
+          <ul>
+            <li>No participant data is uploaded to Flowely servers as part of normal app usage.</li>
+            <li>No cloud account is required just to use the application.</li>
+            <li>Your working data remains under your control on your own computer.</li>
+            <li>The local database is stored in your Documents folder at `~/Documents/Flowely/`.</li>
+          </ul>
+        </section>
 
-    <h2>Software Updates</h2>
-    <p>Flowely may check for application updates by contacting our update server. This request contains only your current app version and operating system — no personal data or database contents.</p>
+        <section class="content-card" id="not-collect">
+          <h2>What We Do Not Collect</h2>
+          <ul>
+            <li>We do not collect participant names, NDIS numbers, addresses, or invoice contents from the app.</li>
+            <li>We do not collect your local database file.</li>
+            <li>We do not run analytics, tracking cookies, or telemetry inside the desktop application.</li>
+            <li>We do not have routine access to the information you store locally in Flowely.</li>
+          </ul>
+        </section>
 
-    <h2>Third-Party Services</h2>
-    <ul>
-      <li><strong>Stripe</strong> — for payment processing. See <a href="https://stripe.com/au/privacy" target="_blank" rel="noopener">Stripe's Privacy Policy</a>.</li>
-    </ul>
+        <section class="content-card" id="may-collect">
+          <h2>What We May Collect</h2>
+          <p>If you choose to subscribe to Flowely, we may collect limited account and support information needed to operate the business side of the service.</p>
+          <ul>
+            <li>Your email address for subscription delivery, billing communication, or support.</li>
+            <li>Support emails or correspondence you send us so we can respond and keep track of the issue.</li>
+          </ul>
+          <p>Payment information is handled by Stripe. We do not store your full credit card details ourselves.</p>
+        </section>
 
-    <h2>Data Backup & Portability</h2>
-    <p>You can export a full backup of your database at any time from Settings. The backup is a standard SQLite file that you own and control. You can move it between computers, back it up to cloud storage, or delete it entirely.</p>
+        <section class="content-card" id="updates">
+          <h2>Software Updates</h2>
+          <p>Flowely may check for app updates by contacting an update service. That request is limited to operational information such as your app version and operating system. It does not include your participant records, invoices, or local database contents.</p>
+        </section>
 
-    <h2>Children's Privacy</h2>
-    <p>Flowely is a professional tool for NDIS providers. We do not knowingly collect information from children under 13.</p>
+        <section class="content-card" id="third-parties">
+          <h2>Third-Party Services</h2>
+          <p>We keep third-party services to a minimum.</p>
+          <ul>
+            <li><strong>Stripe</strong> handles payment processing. You can read <a href="https://stripe.com/au/privacy" target="_blank" rel="noopener">Stripe's Privacy Policy</a> for more detail on how Stripe processes payment data.</li>
+          </ul>
+        </section>
 
-    <h2>Changes to This Policy</h2>
-    <p>We may update this privacy policy from time to time. Changes will be posted on this page with an updated date.</p>
+        <section class="content-card" id="backups">
+          <h2>Backup & Portability</h2>
+          <p>You can export a backup of your data from within Flowely. The backup is a SQLite database file that you can keep, move, delete, or store however you choose.</p>
+          <div class="callout">
+            <strong>Your responsibility</strong>
+            <p>Because your data is stored locally, you are responsible for keeping backups if you want protection against device loss, damage, or accidental deletion.</p>
+          </div>
+        </section>
 
-    <h2>Contact</h2>
-    <p>If you have questions about this privacy policy, contact us at <a href="mailto:contact@flowely.com.au">contact@flowely.com.au</a>.</p>
+        <section class="content-card">
+          <h2>Children's Privacy</h2>
+          <p>Flowely is intended for professional use by providers and businesses. We do not knowingly design or market the product for children under 13.</p>
+        </section>
+
+        <section class="content-card" id="changes">
+          <h2>Changes to This Policy</h2>
+          <p>We may update this privacy policy from time to time. If we do, we will publish the revised version on this page and update the date shown above.</p>
+        </section>
+
+        <section class="content-card" id="contact">
+          <h2>Contact</h2>
+          <p>If you have questions about this privacy policy or want clarification on how Flowely handles data, contact us at <a href="mailto:contact@flowely.com.au">contact@flowely.com.au</a>.</p>
+        </section>
+      </main>
+    </div>
+
+    <p class="footer-note">Flowely is built in Australia for providers who want a calmer, more private invoicing workflow.</p>
   </div>
 </body>
 </html>

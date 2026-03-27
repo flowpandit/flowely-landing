@@ -3,81 +3,456 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service — Flowely</title>
-  <link rel="icon" href="public/logo.svg" type="image/svg+xml" />
+  <title>Terms of Service | Flowely</title>
+  <meta name="description" content="Read Flowely's terms of service, including subscription terms, licence limits, refund policy, data ownership, NDIS disclaimer, and governing law." />
+  <link rel="icon" href="public/flowely-nav-lightmode.png" type="image/png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', -apple-system, sans-serif; color: #0f172a; background: #fff; line-height: 1.7; -webkit-font-smoothing: antialiased; }
-    a { color: #158F77; text-decoration: none; }
+
+    :root {
+      --accent: #158f77;
+      --accent-soft: rgba(21, 143, 119, 0.12);
+      --primary: #0d3052;
+      --bg: #eef4f8;
+      --surface: rgba(255, 255, 255, 0.82);
+      --text: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --border: rgba(148, 163, 184, 0.22);
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 18px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top center, rgba(21, 143, 119, 0.10), transparent 24%),
+        radial-gradient(circle at 88% 16%, rgba(13, 48, 82, 0.08), transparent 24%),
+        linear-gradient(180deg, #f8fbfd 0%, #eef4f8 100%);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-    .container { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
-    .back { display: inline-flex; align-items: center; gap: 4px; font-size: 14px; font-weight: 500; color: #158F77; margin-bottom: 32px; }
-    h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; }
-    .updated { font-size: 13px; color: #94a3b8; margin-bottom: 40px; }
-    h2 { font-size: 18px; font-weight: 700; margin-top: 32px; margin-bottom: 12px; }
-    p, li { font-size: 15px; color: #475569; margin-bottom: 12px; }
-    ul { padding-left: 24px; margin-bottom: 12px; }
-    li { margin-bottom: 6px; }
+
+    .shell {
+      width: min(1240px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 28px;
+      padding: 18px 22px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text);
+    }
+
+    .brand img {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 22px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-copy span {
+      display: block;
+      color: var(--text-muted);
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 2px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .hero {
+      padding: 30px;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at top left, rgba(52, 211, 153, 0.12), transparent 22%),
+        linear-gradient(135deg, #0d3052 0%, #16385b 48%, #158f77 100%);
+      color: #fff;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #d1fae5;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: clamp(2.5rem, 6vw, 4.4rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      margin: 18px 0 14px;
+      max-width: 9ch;
+    }
+
+    .hero p {
+      max-width: 840px;
+      color: rgba(226, 232, 240, 0.9);
+      font-size: 18px;
+      margin-bottom: 24px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .meta-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .sidebar,
+    .content-card {
+      border-radius: 26px;
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-sm);
+      backdrop-filter: blur(16px);
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 20px;
+      padding: 22px;
+    }
+
+    .sidebar h2 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 18px;
+      margin-bottom: 14px;
+      letter-spacing: -0.03em;
+    }
+
+    .toc {
+      display: grid;
+      gap: 10px;
+    }
+
+    .toc a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .toc a:hover {
+      text-decoration: none;
+      background: rgba(21, 143, 119, 0.08);
+      color: var(--accent);
+    }
+
+    .sidebar-note {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(148, 163, 184, 0.18);
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .content {
+      display: grid;
+      gap: 18px;
+    }
+
+    .content-card {
+      padding: 26px;
+    }
+
+    .content-card h2 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 24px;
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .content-card p,
+    .content-card li {
+      color: var(--text-secondary);
+      font-size: 16px;
+    }
+
+    .content-card p + p,
+    .content-card p + ul,
+    .content-card ul + p {
+      margin-top: 12px;
+    }
+
+    .content-card ul {
+      padding-left: 20px;
+      margin-top: 12px;
+    }
+
+    .content-card li + li {
+      margin-top: 8px;
+    }
+
+    .callout {
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(13, 48, 82, 0.08);
+      border: 1px solid rgba(13, 48, 82, 0.10);
+      margin-top: 14px;
+    }
+
+    .callout strong {
+      display: block;
+      color: var(--text);
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+      margin-top: 24px;
+    }
+
+    @media (max-width: 960px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .shell {
+        width: min(1240px, calc(100% - 20px));
+        padding-top: 18px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero,
+      .content-card,
+      .sidebar {
+        padding: 20px;
+      }
+
+      .hero h1 {
+        max-width: 100%;
+      }
+
+      .brand-copy strong {
+        font-size: 20px;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="/" class="back">&larr; Back to Flowely</a>
-    <h1>Terms of Service</h1>
-    <p class="updated">Last updated: 20 March 2026</p>
+  <div class="shell">
+    <header class="topbar">
+      <a href="/" class="brand">
+        <img src="public/flowely-nav-lightmode.png" alt="Flowely logo" />
+        <span class="brand-copy">
+          <strong>Flowely</strong>
+          <span>NDIS invoice software</span>
+        </span>
+      </a>
+      <a href="/" class="back-link">← Back to Flowely</a>
+    </header>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By downloading, installing, or using Flowely ("the Software"), you agree to these Terms of Service. If you do not agree, do not use the Software.</p>
+    <section class="hero">
+      <div class="eyebrow">
+        <span>Terms</span>
+      </div>
+      <h1>The rules for using Flowely.</h1>
+      <p>These terms explain how Flowely is licensed, how subscriptions work, what you are responsible for when using the software, and the limits of what the product can guarantee.</p>
+      <div class="hero-meta">
+        <div class="meta-pill">Last updated: 20 March 2026</div>
+        <div class="meta-pill">$15/month or $149/year</div>
+        <div class="meta-pill">Desktop software licence</div>
+      </div>
+    </section>
 
-    <h2>2. Description of Service</h2>
-    <p>Flowely is a desktop application that helps NDIS providers check invoice compliance against the NDIS Support Catalogue, manage participant information, track budgets, and generate invoice PDFs. The Software runs locally on your computer.</p>
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>On This Page</h2>
+        <nav class="toc">
+          <a href="#acceptance">Acceptance</a>
+          <a href="#service">Description of Service</a>
+          <a href="#subscription">Subscription & Payment</a>
+          <a href="#license">Licence</a>
+          <a href="#ownership">Data Ownership</a>
+          <a href="#disclaimer">NDIS Disclaimer</a>
+          <a href="#updates">Catalogue Updates</a>
+          <a href="#liability">Limitation of Liability</a>
+          <a href="#termination">Termination</a>
+          <a href="#law">Governing Law</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <p class="sidebar-note">If you need clarification on any term, reach out before relying on an assumption.</p>
+      </aside>
 
-    <h2>3. Subscription & Payment</h2>
-    <ul>
-      <li>Flowely is offered as a subscription service at $15 AUD per month or $149 AUD per year.</li>
-      <li>A 7-day free trial is provided. No credit card is required during the trial.</li>
-      <li>Payments are processed securely by Stripe. You may cancel your subscription at any time.</li>
-      <li>Refunds are available within 14 days of purchase if you are not satisfied.</li>
-    </ul>
+      <main class="content">
+        <section class="content-card" id="acceptance">
+          <h2>Acceptance of Terms</h2>
+          <p>By downloading, installing, subscribing to, or using Flowely, you agree to these Terms of Service. If you do not agree, do not use the software.</p>
+        </section>
 
-    <h2>4. License</h2>
-    <p>Upon subscribing, you are granted a non-exclusive, non-transferable license to install and use Flowely on your personal or business computers. You may not redistribute, reverse-engineer, or modify the Software.</p>
+        <section class="content-card" id="service">
+          <h2>Description of Service</h2>
+          <p>Flowely is desktop software that helps NDIS providers check invoice compliance, manage participant details, track budgets, and prepare exports such as invoice PDFs and PACE-ready CSV files. The software is designed to run locally on your computer.</p>
+        </section>
 
-    <h2>5. Data Ownership</h2>
-    <p>All data you enter into Flowely — including participant details, invoices, and provider information — belongs to you. Flowely stores data locally on your device. We do not have access to your data. You are responsible for backing up your database.</p>
+        <section class="content-card" id="subscription">
+          <h2>Subscription & Payment</h2>
+          <ul>
+            <li>Flowely is offered as a subscription at $15 AUD per month or $149 AUD per year.</li>
+            <li>A 7-day free trial is available. No credit card is required to begin the trial.</li>
+            <li>Payments are processed by Stripe.</li>
+            <li>You may cancel your subscription at any time.</li>
+            <li>Refunds are available within 14 days of purchase if you are not satisfied.</li>
+          </ul>
+        </section>
 
-    <h2>6. NDIS Compliance Disclaimer</h2>
-    <p><strong>Flowely is a reference and validation tool only.</strong> It is not a substitute for professional advice or official NDIS guidance. While we strive to keep the NDIS Support Catalogue data accurate and up-to-date:</p>
-    <ul>
-      <li>Flowely is not affiliated with, endorsed by, or connected to the National Disability Insurance Agency (NDIA) or the NDIS.</li>
-      <li>Validation results are for reference only. Always verify against the official NDIS Support Catalogue at <a href="https://www.ndis.gov.au" target="_blank" rel="noopener">ndis.gov.au</a>.</li>
-      <li>We do not guarantee that invoices validated by Flowely will be accepted by the NDIA, plan managers, or any other party.</li>
-      <li>You are solely responsible for the accuracy and compliance of your invoices.</li>
-    </ul>
+        <section class="content-card" id="license">
+          <h2>Licence</h2>
+          <p>When you subscribe, you receive a non-exclusive, non-transferable licence to install and use Flowely for your own business or internal operational use.</p>
+          <ul>
+            <li>You may not redistribute the software.</li>
+            <li>You may not reverse-engineer, copy, resell, or modify the software except where Australian law requires otherwise.</li>
+          </ul>
+        </section>
 
-    <h2>7. Catalogue Updates</h2>
-    <p>The NDIS Support Catalogue is updated periodically by the NDIA (typically quarterly). We aim to update Flowely's catalogue data promptly, but there may be a delay between NDIA updates and our software updates. During this period, some price limits or support item codes may be outdated.</p>
+        <section class="content-card" id="ownership">
+          <h2>Data Ownership</h2>
+          <p>The data you enter into Flowely, including participant records, invoices, provider details, and local exports, belongs to you. Flowely stores working data locally on your device. We do not claim ownership of that data.</p>
+          <div class="callout">
+            <strong>Your responsibility</strong>
+            <p>You are responsible for backing up your local database and checking that the information you enter is correct before using it operationally.</p>
+          </div>
+        </section>
 
-    <h2>8. Limitation of Liability</h2>
-    <p>To the maximum extent permitted by Australian law, Flowely and its creators shall not be liable for any indirect, incidental, special, or consequential damages arising from your use of the Software, including but not limited to financial losses from rejected invoices, incorrect validation results, or data loss.</p>
+        <section class="content-card" id="disclaimer">
+          <h2>NDIS Compliance Disclaimer</h2>
+          <p>Flowely is a reference and validation tool. It is not legal, accounting, or regulatory advice, and it is not a substitute for official NDIA guidance.</p>
+          <ul>
+            <li>Flowely is not affiliated with, endorsed by, or connected to the NDIA or the NDIS.</li>
+            <li>Validation results are provided as operational guidance only.</li>
+            <li>You should still verify against official NDIS materials, including <a href="https://www.ndis.gov.au" target="_blank" rel="noopener">ndis.gov.au</a>.</li>
+            <li>You remain responsible for the accuracy, completeness, and compliance of your invoices and claims.</li>
+          </ul>
+        </section>
 
-    <h2>9. Availability</h2>
-    <p>Flowely is a desktop application that works offline. We do not guarantee continuous availability of update servers or payment processing services.</p>
+        <section class="content-card" id="updates">
+          <h2>Catalogue Updates</h2>
+          <p>The NDIS Support Catalogue may change over time. We aim to update Flowely promptly when catalogue data changes, but there may be delays between an NDIA update and a corresponding Flowely release.</p>
+          <p>During that period, some rates, support item codes, or validation assumptions may be temporarily out of date.</p>
+        </section>
 
-    <h2>10. Modifications</h2>
-    <p>We reserve the right to modify these terms at any time. Continued use of the Software after changes constitutes acceptance of the updated terms. Material changes will be communicated via email to subscribers.</p>
+        <section class="content-card" id="liability">
+          <h2>Limitation of Liability</h2>
+          <p>To the maximum extent permitted by Australian law, Flowely and its creators are not liable for indirect, incidental, special, or consequential loss arising from the use of the software, including rejected invoices, incorrect validation outcomes, service interruptions, or data loss.</p>
+          <p>Where liability cannot be excluded under law, it is limited to the minimum amount permitted.</p>
+        </section>
 
-    <h2>11. Termination</h2>
-    <p>You may stop using Flowely at any time by cancelling your subscription and uninstalling the Software. We may terminate your license if you violate these terms.</p>
+        <section class="content-card">
+          <h2>Availability</h2>
+          <p>Flowely is desktop software and can be used offline for core workflows. However, we do not guarantee continuous availability of update infrastructure, payment systems, or third-party services.</p>
+        </section>
 
-    <h2>12. Governing Law</h2>
-    <p>These terms are governed by the laws of New South Wales, Australia. Any disputes shall be subject to the exclusive jurisdiction of the courts of New South Wales.</p>
+        <section class="content-card">
+          <h2>Changes to These Terms</h2>
+          <p>We may update these terms from time to time. If we do, the revised version will be published on this page with an updated date. Continued use of Flowely after a change means you accept the revised terms.</p>
+        </section>
 
-    <h2>13. Contact</h2>
-    <p>For questions about these terms, contact us at <a href="mailto:contact@flowely.com.au">contact@flowely.com.au</a>.</p>
+        <section class="content-card" id="termination">
+          <h2>Termination</h2>
+          <p>You may stop using Flowely at any time by cancelling your subscription and uninstalling the software. We may suspend or terminate your licence if you breach these terms.</p>
+        </section>
+
+        <section class="content-card" id="law">
+          <h2>Governing Law</h2>
+          <p>These terms are governed by the laws of New South Wales, Australia. Any dispute relating to these terms is subject to the jurisdiction of the courts of New South Wales.</p>
+        </section>
+
+        <section class="content-card" id="contact">
+          <h2>Contact</h2>
+          <p>If you have questions about these terms, contact us at <a href="mailto:contact@flowely.com.au">contact@flowely.com.au</a>.</p>
+        </section>
+      </main>
+    </div>
+
+    <p class="footer-note">Flowely is built for providers who want software that is practical, private, and easier to trust.</p>
   </div>
 </body>
 </html>

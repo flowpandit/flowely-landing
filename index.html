@@ -3,48 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Flowely — NDIS Invoice Compliance Checker for Australian Providers</title>
-  <meta name="description" content="Flowely checks NDIS invoice compliance against the official Support Catalogue. Validate support item codes, price caps, GST, and regional rates. Manage NDIS participants, track plan budgets, and generate compliant invoice PDFs. Built for Australian NDIS providers. From $149/year." />
-  <meta name="keywords" content="NDIS invoice checker, NDIS compliance software, NDIS support catalogue, NDIS price guide, NDIS provider software, NDIS billing tool, NDIS invoice template, NDIS participant management, NDIS budget tracker, NDIS price cap, NDIS GST validation, NDIS plan manager, NDIS sole trader, NDIS support worker, disability provider Australia, NDIS invoicing app, NDIS desktop app" />
+  <title>Flowely | NDIS Invoice Compliance Software for Australian Providers</title>
+  <meta name="description" content="Flowely is desktop software for Australian NDIS providers to validate support item codes, price caps, GST, participant details, budgets, and exports before you send an invoice. Private by design, built for macOS and Windows." />
+  <meta name="keywords" content="NDIS invoice software, NDIS invoicing app, NDIS invoice compliance checker, NDIS invoice validation, NDIS provider software Australia, NDIS support catalogue checker, NDIS price guide checker, NDIS price cap validation, NDIS billing software, NDIS participant management software, NDIS budget tracking software, NDIS PACE CSV export, NDIS invoice PDF generator, disability service provider software Australia, offline invoicing software Australia, desktop invoicing software for NDIS providers" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Flowely" />
 
-  <!-- Open Graph / Social -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Flowely — NDIS Invoice Compliance Checker" />
-  <meta property="og:description" content="Validate NDIS support item codes, price caps, and GST. Manage participants, track budgets, generate invoices. Desktop app for Australian NDIS providers." />
-  <meta property="og:image" content="public/app-mac.png" />
+  <meta property="og:title" content="Flowely | NDIS Invoice Compliance Software" />
+  <meta property="og:description" content="Check support item codes, rates, GST, participant details, and exports before you invoice. Flowely is a private desktop app built for Australian NDIS providers." />
+  <meta property="og:image" content="https://flowely.com.au/public/app-mac.png" />
   <meta property="og:url" content="https://flowely.com.au" />
   <meta property="og:site_name" content="Flowely" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Flowely — NDIS Invoice Compliance Checker" />
-  <meta name="twitter:description" content="Check NDIS invoice compliance in seconds. Built for Australian providers. $15/month." />
-  <meta name="twitter:image" content="public/app-mac.png" />
+  <meta name="twitter:title" content="Flowely | NDIS Invoice Compliance Software" />
+  <meta name="twitter:description" content="Desktop software for Australian NDIS providers to validate invoices, track budgets, and export with confidence." />
+  <meta name="twitter:image" content="https://flowely.com.au/public/app-mac.png" />
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://flowely.com.au" />
-
   <link rel="icon" href="public/flowely-nav-lightmode.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1" rel="stylesheet" />
 
-  <!-- Structured Data for Google -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "name": "Flowely",
-    "description": "NDIS invoice compliance checker for Australian providers. Validate support item codes, price caps, GST, manage participants, track budgets, and generate compliant invoice PDFs.",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "macOS, Windows",
+    "description": "Desktop NDIS invoice compliance software for Australian providers. Validate support item codes, price caps, GST, participant details, plan budgets, invoice PDFs, and PACE CSV exports.",
+    "keywords": "NDIS invoice software, NDIS compliance software, NDIS support catalogue checker, NDIS price cap validation, NDIS billing software, NDIS participant management, NDIS PACE CSV export",
+    "url": "https://flowely.com.au",
+    "image": "https://flowely.com.au/public/app-mac.png",
     "offers": {
       "@type": "Offer",
       "price": "15.00",
       "priceCurrency": "AUD",
-      "priceValidUntil": "2027-12-31",
-      "availability": "https://schema.org/PreOrder"
+      "availability": "https://schema.org/PreOrder",
+      "priceValidUntil": "2027-12-31"
     },
-    "aggregateRating": null,
-    "image": "https://flowely.com.au/public/app-mac.png",
-    "url": "https://flowely.com.au",
     "author": {
       "@type": "Organization",
       "name": "Flowely",
@@ -52,587 +53,1531 @@
     }
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1" rel="stylesheet" />
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     :root {
-      --accent: #158F77;
-      --accent-light: #e6f7f3;
-      --accent-dark: #0f6b59;
-      --bg: #ffffff;
-      --bg-alt: #f8fafc;
-      --bg-dark: #0c1220;
+      --accent: #158f77;
+      --accent-hover: #117a66;
+      --accent-soft: rgba(21, 143, 119, 0.12);
+      --accent-strong: rgba(21, 143, 119, 0.18);
+      --primary: #0d3052;
+      --primary-soft: rgba(13, 48, 82, 0.14);
+      --bg: #f1f5f9;
+      --bg-elevated: rgba(255, 255, 255, 0.88);
+      --bg-solid: #ffffff;
+      --bg-inset: #f8fafc;
       --text: #0f172a;
       --text-secondary: #475569;
-      --text-muted: #94a3b8;
-      --border: #e2e8f0;
-      --shadow: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
-      --shadow-lg: 0 10px 40px rgba(0,0,0,0.08);
-      --radius: 12px;
+      --text-muted: #64748b;
+      --border: rgba(148, 163, 184, 0.22);
+      --border-strong: rgba(100, 116, 139, 0.25);
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 12px 30px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 24px 60px rgba(15, 23, 42, 0.14);
+      --radius: 22px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --container: 1440px;
     }
+
     html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', -apple-system, sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    a { color: var(--accent); text-decoration: none; }
-    img { max-width: 100%; display: block; }
 
-    /* Layout */
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
-    .section { padding: 80px 0; }
-    .section-alt { background: var(--bg-alt); }
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top center, rgba(21, 143, 119, 0.10), transparent 28%),
+        radial-gradient(circle at 90% 18%, rgba(13, 48, 82, 0.08), transparent 22%),
+        linear-gradient(180deg, #f8fbfd 0%, #f1f5f9 20%, #eef4f8 100%);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
 
-    /* Nav */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,0.92); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 12px 0;
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input { font: inherit; }
+
+    .container {
+      width: min(var(--container), calc(100% - 40px));
+      margin: 0 auto;
     }
-    nav .container { display: flex; align-items: center; justify-content: space-between; }
-    .nav-main { display: flex; align-items: center; gap: 20px; }
-    .nav-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--text); }
-    .nav-brand img { width: 32px; height: 32px; border-radius: 8px; }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-secondary); transition: color 150ms; }
-    .nav-links a:hover { color: var(--accent); }
-    .nav-toggle {
-      display: none; align-items: center; justify-content: center;
-      width: 44px; height: 44px; border-radius: 12px;
-      border: 1px solid var(--border); background: var(--bg);
-      color: var(--text); cursor: pointer; transition: all 150ms;
+
+    .section { padding: 96px 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      box-shadow: var(--shadow-sm);
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
     }
-    .nav-toggle:hover { border-color: var(--accent); color: var(--accent); }
-    .nav-toggle .material-symbols-outlined { font-size: 24px; }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 56px;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      margin: 18px 0 14px;
+    }
+
+    .section-heading p {
+      color: var(--text-secondary);
+      font-size: 18px;
+    }
+
     .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 22px; border-radius: 9999px; font-size: 14px; font-weight: 600;
-      border: none; cursor: pointer; transition: all 150ms;
-    }
-    .btn-primary { background: var(--accent); color: #fff; }
-    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(21,143,119,0.3); }
-    .btn-secondary { background: var(--bg-alt); color: var(--text); border: 1px solid var(--border); }
-    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
-    .btn-lg { padding: 14px 32px; font-size: 16px; }
-
-    /* Hero */
-    .hero { padding: 100px 0 80px; text-align: center; }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 6px 16px; border-radius: 9999px; font-size: 13px; font-weight: 600;
-      background: var(--accent-light); color: var(--accent); margin-bottom: 24px;
-    }
-    .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 20px; max-width: 720px; margin-left: auto; margin-right: auto; }
-    .hero h1 span { color: var(--accent); }
-    .hero p { font-size: 18px; color: var(--text-secondary); max-width: 560px; margin: 0 auto 36px; line-height: 1.7; }
-    .hero-actions { display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: 48px; }
-    .hero-note { font-size: 13px; color: var(--text-muted); }
-    .hero-screenshot {
-      max-width: 900px; margin: 0 auto;
-      border-radius: 16px; overflow: hidden;
-      box-shadow: var(--shadow-lg), 0 0 0 1px var(--border);
-      border: 1px solid var(--border);
-      background: var(--bg-dark);
-      position: relative;
-    }
-    .hero-screenshot img { width: 100%; }
-    .screenshot-placeholder {
-      width: 100%; aspect-ratio: 16/10;
-      background: linear-gradient(135deg, #0c1220 0%, #1a2538 100%);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--text-muted); font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, border-color 160ms ease;
+      font-weight: 600;
     }
 
-    /* Features */
-    .features-header { text-align: center; margin-bottom: 56px; }
-    .features-header h2 { font-size: 36px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
-    .features-header p { font-size: 16px; color: var(--text-secondary); max-width: 480px; margin: 0 auto; }
-    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .feature-card {
-      padding: 28px; border-radius: var(--radius);
-      background: var(--bg); border: 1px solid var(--border);
-      transition: all 200ms;
-    }
-    .feature-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); border-color: var(--accent); }
-    .feature-icon {
-      width: 44px; height: 44px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      margin-bottom: 16px; font-size: 22px;
-    }
-    .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+    .btn:hover { transform: translateY(-1px); }
 
-    /* How it works */
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 56px; }
-    .step { text-align: center; }
-    .step-num {
-      width: 40px; height: 40px; border-radius: 9999px;
-      background: var(--accent); color: #fff; font-weight: 700; font-size: 16px;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 16px;
-    }
-    .step h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
-    .step p { font-size: 13px; color: var(--text-secondary); }
-
-    /* Privacy */
-    .privacy-box {
-      display: flex; align-items: center; gap: 40px;
-      padding: 48px; border-radius: 16px;
-      background: linear-gradient(135deg, #0c1220 0%, #1a2538 100%);
+    .btn-primary {
+      padding: 14px 20px;
+      background: linear-gradient(135deg, var(--accent) 0%, #119178 100%);
       color: #fff;
+      box-shadow: 0 14px 28px rgba(21, 143, 119, 0.22);
     }
-    .privacy-box .icon-big {
-      width: 80px; height: 80px; border-radius: 20px;
-      background: rgba(255,255,255,0.1);
-      display: flex; align-items: center; justify-content: center;
+
+    .btn-primary:hover { background: linear-gradient(135deg, var(--accent-hover) 0%, #0f856d 100%); }
+
+    .btn-secondary {
+      padding: 14px 20px;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--text);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-secondary:hover { border-color: var(--accent-strong); }
+
+    .btn-nav { padding: 11px 18px; border-radius: 12px; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 18px 0;
+      backdrop-filter: blur(18px);
+      background: rgba(241, 245, 249, 0.72);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+    }
+
+    nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 16px;
+    }
+
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .nav-brand img {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .nav-brand-text strong {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 17px;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-brand-text span {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: nowrap;
+    }
+
+    .nav-links a:not(.btn) {
+      padding: 10px 12px;
+      border-radius: 12px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .nav-links a:not(.btn):hover {
+      background: rgba(255, 255, 255, 0.7);
+      color: var(--text);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.76);
+      color: var(--text);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .nav-links .btn {
+      white-space: nowrap;
+    }
+
+    .hero {
+      position: relative;
+      padding: 72px 0 36px;
+    }
+
+    .hero-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .hero-copy {
+      width: 100%;
+      max-width: 1320px;
+      text-align: center;
+    }
+
+    .hero-copy h1 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: clamp(3.6rem, 7vw, 6.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      margin: 18px 0 20px;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-copy h1 span { color: var(--accent); }
+
+    .hero-copy p {
+      max-width: 1180px;
+      color: var(--text-secondary);
+      font-size: 22px;
+      margin-bottom: 28px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+      justify-content: center;
+    }
+
+    .hero-highlights {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      max-width: 1320px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-highlight {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow: var(--shadow-sm);
+      text-align: left;
+    }
+
+    .hero-highlight .material-symbols-outlined {
+      color: var(--accent);
+      font-size: 20px;
+      margin-top: 2px;
       flex-shrink: 0;
     }
-    .privacy-box h2 { font-size: 28px; font-weight: 800; margin-bottom: 12px; }
-    .privacy-box p { font-size: 15px; color: #94a3b8; line-height: 1.7; }
-    .privacy-checks { display: flex; gap: 24px; margin-top: 16px; }
-    .privacy-check { display: flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 500; color: #34d399; }
 
-    /* Pricing */
+    .hero-highlight-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .hero-highlight strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .hero-highlight span:last-child {
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .hero-visual {
+      position: relative;
+      width: 100%;
+      max-width: 1400px;
+    }
+
+    .hero-panel {
+      position: relative;
+      padding: 28px;
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.86) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.84);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(21, 143, 119, 0.10), transparent 28%),
+        radial-gradient(circle at 90% 12%, rgba(13, 48, 82, 0.12), transparent 22%);
+      pointer-events: none;
+    }
+
+    .app-window {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(203, 213, 225, 0.8);
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      box-shadow: 0 20px 36px rgba(15, 23, 42, 0.14);
+    }
+
+    .app-window-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      background: rgba(248, 250, 252, 0.92);
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .window-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(148, 163, 184, 0.5);
+    }
+
+    .window-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .hero-shot {
+      width: 100%;
+      aspect-ratio: 2.05;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    .float-card {
+      position: absolute;
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(12px);
+      min-width: 200px;
+    }
+
+    .float-card strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .float-card span {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 13px;
+    }
+
+    .float-card.one {
+      left: 28px;
+      bottom: 34px;
+    }
+
+    .float-card.two {
+      right: 28px;
+      top: 34px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 34px;
+    }
+
+    .metric-card {
+      padding: 24px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .metric-card strong {
+      display: block;
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 28px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .metric-card span {
+      color: var(--text-secondary);
+      font-size: 14px;
+    }
+
+    .surface {
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-md);
+    }
+
+    .problem-grid,
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .problem-card,
+    .feature-card {
+      padding: 32px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .problem-card .icon,
+    .feature-card .icon {
+      width: 48px;
+      height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 14px;
+      margin-bottom: 18px;
+      color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .feature-card .icon.navy { background: var(--primary-soft); color: var(--primary); }
+    .feature-card .icon.gold { background: rgba(217, 119, 6, 0.14); color: #b45309; }
+
+    .problem-card h3,
+    .feature-card h3 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 20px;
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .problem-card p,
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    .showcase {
+      padding: 34px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .showcase-copy h2 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+      margin: 18px 0 16px;
+    }
+
+    .showcase-copy p {
+      color: var(--text-secondary);
+      font-size: 17px;
+      margin-bottom: 16px;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .check-list-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    .check-list-item .material-symbols-outlined {
+      color: var(--accent);
+      font-size: 20px;
+      margin-top: 1px;
+    }
+
+    .showcase-panel {
+      border-radius: 24px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #f8fafc 0%, #eef4f8 100%);
+      border: 1px solid rgba(203, 213, 225, 0.75);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .showcase-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+      background: rgba(255, 255, 255, 0.84);
+    }
+
+    .showcase-title strong {
+      display: block;
+      font-size: 15px;
+    }
+
+    .showcase-title span {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .showcase-list {
+      display: grid;
+      gap: 14px;
+      padding: 18px;
+    }
+
+    .showcase-row {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr 0.8fr;
+      gap: 12px;
+      align-items: center;
+      padding: 15px 16px;
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.86);
+    }
+
+    .showcase-row strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .showcase-row span {
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .status-pill.ok {
+      color: #065f46;
+      background: rgba(16, 185, 129, 0.14);
+    }
+
+    .status-pill.warn {
+      color: #92400e;
+      background: rgba(245, 158, 11, 0.16);
+    }
+
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .workflow-step {
+      position: relative;
+      padding: 28px 24px;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.76);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .workflow-step::before {
+      content: attr(data-step);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--primary) 0%, #17456f 100%);
+      color: #fff;
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 17px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      box-shadow: 0 14px 24px rgba(13, 48, 82, 0.24);
+    }
+
+    .workflow-step h3 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: 19px;
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
+    }
+
+    .workflow-step p {
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    .trust-panel {
+      padding: 34px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 28px;
+      align-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(52, 211, 153, 0.10), transparent 24%),
+        linear-gradient(135deg, #0f172a 0%, #152338 55%, #18324a 100%);
+      color: #fff;
+      border-radius: 30px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .trust-panel h2 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin: 18px 0 14px;
+    }
+
+    .trust-panel p {
+      color: rgba(226, 232, 240, 0.88);
+      font-size: 17px;
+    }
+
+    .trust-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .trust-item {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .trust-item strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .trust-item span {
+      color: rgba(226, 232, 240, 0.8);
+      font-size: 14px;
+    }
+
+    .pricing-shell {
+      padding: 36px;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .pricing-copy h2 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.06;
+      letter-spacing: -0.05em;
+      margin: 18px 0 16px;
+    }
+
+    .pricing-copy p {
+      color: var(--text-secondary);
+      font-size: 17px;
+    }
+
     .pricing-card {
-      max-width: 440px; margin: 0 auto;
-      padding: 40px; border-radius: 16px;
-      background: var(--bg); border: 2px solid var(--accent);
+      padding: 30px;
+      border-radius: 28px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.96) 100%);
+      border: 1px solid rgba(203, 213, 225, 0.7);
+      box-shadow: var(--shadow-md);
+    }
+
+    .pricing-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .pricing-value {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .pricing-value strong {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: clamp(3rem, 7vw, 4.4rem);
+      line-height: 0.9;
+      letter-spacing: -0.06em;
+    }
+
+    .pricing-value span {
+      color: var(--text-muted);
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .pricing-note {
+      color: var(--text-secondary);
+      font-size: 15px;
+      margin-bottom: 22px;
+    }
+
+    .pricing-save {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      color: var(--primary);
+      background: rgba(13, 48, 82, 0.10);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .pricing-list {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .pricing-list li {
+      list-style: none;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+
+    .pricing-list .material-symbols-outlined {
+      color: var(--accent);
+      font-size: 19px;
+      margin-top: 1px;
+    }
+
+    .cta {
+      padding: 34px;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at top center, rgba(52, 211, 153, 0.14), transparent 28%),
+        linear-gradient(135deg, #0d3052 0%, #123d63 40%, #158f77 100%);
+      color: #fff;
       box-shadow: var(--shadow-lg);
       text-align: center;
     }
-    .pricing-badge {
-      display: inline-block; padding: 4px 14px; border-radius: 9999px;
-      background: var(--accent-light); color: var(--accent);
-      font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
-      margin-bottom: 20px;
-    }
-    .pricing-amount { font-size: 56px; font-weight: 800; color: var(--text); line-height: 1; }
-    .pricing-amount span { font-size: 18px; font-weight: 500; color: var(--text-muted); }
-    .pricing-desc { font-size: 15px; color: var(--text-secondary); margin: 12px 0 28px; }
-    .pricing-features { text-align: left; margin-bottom: 32px; }
-    .pricing-features li {
-      display: flex; align-items: center; gap: 10px;
-      padding: 8px 0; font-size: 14px; color: var(--text-secondary);
-      border-bottom: 1px solid var(--border);
-    }
-    .pricing-features li:last-child { border-bottom: none; }
-    .pricing-features .material-symbols-outlined { font-size: 18px; color: var(--accent); }
 
-    /* CTA */
-    .cta {
-      text-align: center; padding: 80px 0;
-      background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-      color: #fff;
+    .cta h2 {
+      font-family: "Plus Jakarta Sans", "Inter", sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.04;
+      letter-spacing: -0.05em;
+      margin: 18px auto 14px;
+      max-width: 100%;
     }
-    .cta h2 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
-    .cta p { font-size: 16px; opacity: 0.85; margin-bottom: 32px; }
-    .cta .btn-primary { background: #fff; color: var(--accent); }
-    .cta .btn-primary:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+
+    .cta p {
+      color: rgba(226, 232, 240, 0.9);
+      font-size: 18px;
+      margin: 0 auto 28px;
+      max-width: 980px;
+    }
+
     .notify-form {
-      display: flex; gap: 12px; justify-content: center;
-      max-width: 480px; margin: 0 auto;
+      width: min(760px, 100%);
+      margin: 0 auto;
+      display: flex;
+      gap: 12px;
+      padding: 10px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(12px);
     }
+
     .notify-input {
-      flex: 1; min-width: 0;
-      padding: 14px 20px; border-radius: 9999px;
-      border: 2px solid rgba(255,255,255,0.3);
-      background: rgba(255,255,255,0.1); color: #fff;
-      font-size: 15px; outline: none; font-family: inherit;
+      flex: 1;
+      min-width: 0;
+      border: none;
+      outline: none;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--text);
     }
-    .notify-input::placeholder { color: rgba(255,255,255,0.72); }
-    .notify-btn { background: #fff; color: var(--accent); flex-shrink: 0; }
+
+    .notify-input::placeholder { color: var(--text-muted); }
+
+    .notify-btn {
+      flex-shrink: 0;
+      padding: 14px 18px;
+      background: #fff;
+      color: var(--primary);
+      box-shadow: none;
+    }
+
+    .notify-btn:hover { background: #f8fafc; }
+
+    .notify-msg {
+      min-height: 20px;
+      margin-top: 14px;
+      font-size: 13px;
+    }
+
     .platform-list {
-      display: flex; gap: 24px; justify-content: center;
-      margin-top: 24px; flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 22px;
     }
+
     .platform-item {
-      display: flex; align-items: center; gap: 8px;
-      opacity: 0.7;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 14px;
     }
 
-    .pricing-annual {
-      font-size: 14px; color: var(--accent);
-      font-weight: 600; margin-bottom: 24px;
+    footer {
+      padding: 34px 0 48px;
     }
 
-    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
-
-    /* Footer */
-    footer { padding: 40px 0; border-top: 1px solid var(--border); }
     footer .container {
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 24px;
-    }
-    footer p { font-size: 13px; color: var(--text-muted); }
-    footer a { color: var(--text-muted); }
-    footer a:hover { color: var(--accent); }
-
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .hero { padding: 88px 0 72px; }
-      .hero h1 { font-size: 44px; max-width: 680px; }
-      .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .steps { grid-template-columns: repeat(2, 1fr); gap: 28px; }
-      .privacy-box { gap: 28px; padding: 40px; }
-      .nav-links { gap: 20px; }
+      padding-top: 24px;
+      border-top: 1px solid rgba(203, 213, 225, 0.7);
     }
 
-    @media (max-width: 768px) {
-      .container { padding: 0 20px; }
-      .section { padding: 64px 0; }
-      nav { padding: 14px 0; }
+    .footer-copy {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .footer-links a:hover { color: var(--accent); }
+
+    @media (max-width: 1100px) {
       nav .container {
+        gap: 14px;
+      }
+      .nav-brand-text strong {
+        font-size: 16px;
+      }
+      .nav-brand-text span {
+        font-size: 11px;
+      }
+      .nav-links {
+        gap: 6px;
+      }
+      .nav-links a:not(.btn) {
+        padding: 10px 10px;
+        font-size: 13px;
+      }
+      .btn-nav {
+        padding: 11px 16px;
+      }
+      .showcase,
+      .pricing-shell,
+      .trust-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid { gap: 36px; }
+      .hero-copy {
+        text-align: center;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+      .hero-copy h1 {
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: clamp(3.4rem, 7vw, 4.6rem);
+      }
+      .hero-copy p {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 760px;
+        font-size: 19px;
+      }
+      .hero-actions {
+        justify-content: center;
+      }
+      .hero-highlights {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .float-card.one,
+      .float-card.two {
+        position: static;
+        margin-top: 16px;
+      }
+
+      .hero-visual {
+        display: grid;
+        gap: 16px;
+      }
+
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .problem-grid,
+      .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .workflow-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 820px) {
+      .section { padding: 78px 0; }
+      nav .container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .nav-toggle {
+        display: inline-flex;
         align-items: center;
+        justify-content: center;
       }
-      .nav-main {
-        width: 100%;
-        justify-content: space-between;
-      }
-      .nav-brand { justify-content: flex-start; }
-      .nav-toggle { display: inline-flex; }
       .nav-links {
         display: none;
-        width: 100%;
         flex-direction: column;
         align-items: stretch;
         gap: 10px;
-        margin-top: 14px;
-        padding-top: 14px;
-        border-top: 1px solid var(--border);
-      }
-      nav.menu-open .container {
-        flex-direction: column;
-        align-items: stretch;
+        padding-top: 16px;
+        border-top: 1px solid rgba(203, 213, 225, 0.7);
       }
       nav.menu-open .nav-links { display: flex; }
-      .nav-links a {
-        width: 100%;
-        justify-content: center;
-        text-align: center;
-        padding: 12px 16px;
-        border-radius: 14px;
-        background: var(--bg-alt);
-      }
-      .nav-links a:not(.btn) { font-size: 13px; }
+      .nav-links a:not(.btn),
       .nav-links .btn {
         width: 100%;
         justify-content: center;
       }
-      .hero { padding: 72px 0 64px; }
-      .hero h1 { font-size: 32px; }
-      .hero p { font-size: 16px; }
-      .hero-actions {
-        flex-direction: column;
-        margin-bottom: 36px;
+      .hero {
+        padding-top: 48px;
       }
-      .hero-actions .btn {
-        width: min(100%, 360px);
-        justify-content: center;
+      .hero-copy h1 {
+        max-width: 100%;
+        font-size: clamp(2.9rem, 8vw, 4rem);
       }
-      .hero-screenshot { border-radius: 14px; }
-      .features-header { margin-bottom: 40px; }
-      .features-header h2 { font-size: 30px; }
-      .features-grid { grid-template-columns: 1fr; }
-      .feature-card { padding: 24px; }
-      .steps { grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
-      .privacy-box { flex-direction: column; text-align: center; padding: 32px; }
-      .privacy-checks { flex-direction: column; align-items: center; }
-      .pricing-card { padding: 32px; }
-      .pricing-amount { font-size: 48px; }
-      .cta { padding: 64px 0; }
-      .cta h2 { font-size: 30px; }
+      .hero-copy p,
+      .section-heading p,
+      .showcase-copy p,
+      .pricing-copy p,
+      .cta p,
+      .trust-panel p {
+        font-size: 17px;
+      }
+      .showcase,
+      .trust-panel,
+      .pricing-shell,
+      .cta {
+        padding: 26px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(var(--container), calc(100% - 28px)); }
+      .section { padding: 64px 0; }
+      .hero-copy h1 { max-width: 10ch; }
+      .hero-actions,
+      .metrics,
+      .problem-grid,
+      .feature-grid,
+      .workflow-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-highlights {
+        grid-template-columns: 1fr;
+      }
+      .hero-actions .btn,
+      .notify-form,
+      .notify-btn {
+        width: 100%;
+      }
       .notify-form {
         flex-direction: column;
-        max-width: 420px;
       }
-      .notify-btn { width: 100%; justify-content: center; }
+      .showcase,
+      .trust-panel,
+      .pricing-shell,
+      .cta,
+      .hero-panel {
+        padding: 20px;
+      }
+      .hero-shot {
+        aspect-ratio: 1.28;
+      }
+      .showcase-row {
+        grid-template-columns: 1fr;
+      }
+      .footer-links,
       footer .container {
         flex-direction: column;
         text-align: center;
       }
-      .footer-links { justify-content: center; }
-    }
-
-    @media (max-width: 560px) {
-      .container { padding: 0 16px; }
-      .section { padding: 56px 0; }
-      .btn, .btn-lg {
-        width: 100%;
-        justify-content: center;
-      }
-      .hero-badge {
-        width: 100%;
-        justify-content: center;
-        padding: 8px 14px;
-      }
-      .hero h1 { font-size: 28px; }
-      .hero p { font-size: 15px; margin-bottom: 28px; }
-      .hero-note { line-height: 1.5; }
-      .features-header h2,
-      .cta h2,
-      .privacy-box h2 { font-size: 26px; }
-      .steps { grid-template-columns: 1fr; }
-      .step { padding: 0 8px; }
-      .privacy-box { padding: 24px 20px; }
-      .privacy-box .icon-big {
-        width: 68px;
-        height: 68px;
-      }
-      .pricing-card { padding: 28px 20px; }
-      .pricing-amount { font-size: 42px; }
-      .pricing-features li { align-items: flex-start; }
-      .notify-input { width: 100%; }
-      .platform-list {
-        flex-direction: column;
-        gap: 12px;
-        align-items: center;
-      }
-      .footer-links {
-        flex-direction: column;
-        gap: 12px;
-      }
+      .platform-list { flex-direction: column; }
     }
   </style>
 </head>
 <body>
-
-  <!-- Nav -->
   <nav>
     <div class="container">
       <div class="nav-main">
         <a href="#" class="nav-brand">
-          <img src="public/flowely-nav-lightmode.png" alt="Flowely" />
-          Flowely
+          <img src="public/flowely-nav-lightmode.png" alt="Flowely logo" />
+          <div class="nav-brand-text">
+            <strong>Flowely</strong>
+            <span>NDIS invoice software</span>
+          </div>
         </a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
           <span class="material-symbols-outlined">menu</span>
         </button>
       </div>
       <div class="nav-links" id="nav-links">
-        <a href="#features">Features</a>
-        <a href="#how-it-works">How It Works</a>
+        <a href="#product">Product</a>
+        <a href="#workflow">How It Works</a>
         <a href="#pricing">Pricing</a>
-        <a href="#download" class="btn btn-primary">Coming Soon</a>
+        <a href="#download" class="btn btn-primary btn-nav">Join Waitlist</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-badge">
-        <span class="material-symbols-outlined" style="font-size: 16px;">verified</span>
-        Built for Australian NDIS Providers
-      </div>
-      <h1>Check NDIS invoice <span>compliance</span> in seconds</h1>
-      <p>Validate support item codes, price caps, and GST against the official NDIS Support Catalogue. Manage participants, track budgets, and generate compliant invoices.</p>
-      <div class="hero-actions">
-        <a href="#download" class="btn btn-primary btn-lg">
-          <span class="material-symbols-outlined">notifications_active</span>
-          Get Notified at Launch
-        </a>
-        <a href="#pricing" class="btn btn-secondary btn-lg">View Pricing</a>
-      </div>
-      <p class="hero-note">Coming soon for macOS & Windows. No cloud. Your data stays on your device.</p>
-
-      <div class="hero-screenshot">
-        <img src="public/app-mac.png" alt="Flowely — NDIS Invoice Checker running on macOS" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section class="section section-alt" id="features">
-    <div class="container">
-      <div class="features-header">
-        <h2>Everything you need to stay compliant</h2>
-        <p>Purpose-built for NDIS providers who need to check invoices fast without expensive software.</p>
-      </div>
-
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon" style="background: #e6f7f3; color: var(--accent);">
-            <span class="material-symbols-outlined">fact_check</span>
-          </div>
-          <h3>Invoice Compliance Check</h3>
-          <p>Validate support item codes, unit prices, and GST against the official 2025-26 NDIS Support Catalogue with 671 items.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon" style="background: #fef3c7; color: #d97706;">
-            <span class="material-symbols-outlined">attach_money</span>
-          </div>
-          <h3>Price Cap Validation</h3>
-          <p>Automatically flags rates exceeding NDIS price limits for your region — national, remote (MMM 6), and very remote (MMM 7).</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon" style="background: #dbeafe; color: #2563eb;">
-            <span class="material-symbols-outlined">group</span>
-          </div>
-          <h3>Participant Management</h3>
-          <p>Store participant details, NDIS numbers, plan dates, and management type. Auto-fill invoices from saved participants.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon" style="background: #fce7f3; color: #db2777;">
-            <span class="material-symbols-outlined">account_balance_wallet</span>
-          </div>
-          <h3>Budget Tracking</h3>
-          <p>Track allocated vs used budget across all 15 NDIS support categories. Visual progress bars show remaining funds at a glance.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon" style="background: #f0fdf4; color: #16a34a;">
-            <span class="material-symbols-outlined">picture_as_pdf</span>
-          </div>
-          <h3>Invoice PDF Generation</h3>
-          <p>Generate professional NDIS-compliant invoice PDFs with your business details, participant info, and line items.</p>
-        </div>
-
-        <div class="feature-card">
-          <div class="feature-icon" style="background: #f5f3ff; color: #7c3aed;">
-            <span class="material-symbols-outlined">download</span>
-          </div>
-          <h3>PACE CSV Export</h3>
-          <p>Export invoices as NDIS PACE-compatible bulk CSV files ready to upload to the myplace provider portal. All 16 columns, validated before export.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- How It Works -->
-  <section class="section" id="how-it-works">
-    <div class="container">
-      <div class="features-header">
-        <h2>How it works</h2>
-        <p>From invoice to PACE-ready export in under a minute.</p>
-      </div>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <h3>Create Invoice</h3>
-          <p>Enter NDIS support item codes, rates, quantities, and service dates. Auto-complete from the catalogue.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <h3>Select Participant</h3>
-          <p>Pick from saved participants or enter details. Region, plan dates, and management type auto-fill.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <h3>Validate</h3>
-          <p>One click checks all codes, prices, GST, and day-type rates against the NDIS catalogue.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <h3>Export</h3>
-          <p>Generate a PDF invoice or export as a PACE-compatible CSV ready to upload to the myplace portal.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Privacy -->
-  <section class="section section-alt">
-    <div class="container">
-      <div class="privacy-box">
-        <div class="icon-big">
-          <span class="material-symbols-outlined" style="font-size: 40px; color: #34d399;">shield</span>
-        </div>
-        <div>
-          <h2>Zero-Cloud Privacy</h2>
-          <p>In the NDIS world, data breaches are an existential risk. Flowely keeps all participant names, NDIS numbers, and invoice data on your computer — never uploaded to any server. Your data is yours.</p>
-          <div class="privacy-checks">
-            <div class="privacy-check">
-              <span class="material-symbols-outlined" style="font-size: 18px;">check_circle</span>
-              100% offline capable
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">
+              <span class="material-symbols-outlined" style="font-size: 18px;">verified_user</span>
+              Built for Australian NDIS providers
             </div>
-            <div class="privacy-check">
-              <span class="material-symbols-outlined" style="font-size: 18px;">check_circle</span>
-              No cloud storage
+            <h1>Catch invoice mistakes <span>before</span> they cost you time.</h1>
+            <p>Flowely helps providers validate support item codes, price caps, GST, participant details, and export data in one calm desktop workspace. No bloated practice software. No cloud-first risk. Just cleaner invoicing with more confidence.</p>
+            <div class="hero-actions">
+              <a href="#download" class="btn btn-primary">
+                <span class="material-symbols-outlined">notifications_active</span>
+                Get notified at launch
+              </a>
+              <a href="#pricing" class="btn btn-secondary">
+                <span class="material-symbols-outlined">sell</span>
+                View pricing
+              </a>
             </div>
-            <div class="privacy-check">
-              <span class="material-symbols-outlined" style="font-size: 18px;">check_circle</span>
-              No account required
+            <div class="hero-highlights">
+              <div class="hero-highlight">
+                <span class="material-symbols-outlined">fact_check</span>
+                <div class="hero-highlight-content">
+                  <strong>Validate before export</strong>
+                  <span>Check codes, regional caps, GST, and day types before the invoice leaves your desk.</span>
+                </div>
+              </div>
+              <div class="hero-highlight">
+                <span class="material-symbols-outlined">shield_lock</span>
+                <div class="hero-highlight-content">
+                  <strong>Private by design</strong>
+                  <span>Participant data stays on your device, with offline-capable workflows built in.</span>
+                </div>
+              </div>
+              <div class="hero-highlight">
+                <span class="material-symbols-outlined">groups</span>
+                <div class="hero-highlight-content">
+                  <strong>Made for small providers</strong>
+                  <span>Built for sole traders and growing teams who need clarity, not admin overload.</span>
+                </div>
+              </div>
+              <div class="hero-highlight">
+                <span class="material-symbols-outlined">desktop_windows</span>
+                <div class="hero-highlight-content">
+                  <strong>Desktop first</strong>
+                  <span>Designed for focused work on macOS and Windows, not another browser tab to babysit.</span>
+                </div>
+              </div>
             </div>
-            <div class="privacy-check">
-              <span class="material-symbols-outlined" style="font-size: 18px;">check_circle</span>
-              Export backups anytime
+          </div>
+
+          <div class="hero-visual">
+            <div class="hero-panel">
+              <div class="app-window">
+                <div class="app-window-bar">
+                  <div class="window-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                  <div class="window-badge">
+                    <span class="material-symbols-outlined" style="font-size: 16px;">task_alt</span>
+                    Flowely desktop workflow
+                  </div>
+                </div>
+                <img class="hero-shot" src="public/app-mac.png" alt="Flowely desktop app showing NDIS invoicing workflow on macOS" />
+              </div>
+            </div>
+            <div class="float-card one">
+              <strong>Checks where risk happens</strong>
+              <span>Rates, GST, participant details, duplicate invoices, and export readiness in one place.</span>
+            </div>
+            <div class="float-card two">
+              <strong>Feels like the product</strong>
+              <span>Calm surfaces, clear hierarchy, and a desktop-first workflow that matches the app experience.</span>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Pricing -->
-  <section class="section" id="pricing">
-    <div class="container">
-      <div class="features-header">
-        <h2>Simple, affordable pricing</h2>
-        <p>One plan. Everything included. No per-user fees.</p>
-      </div>
-
-      <div class="pricing-card">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-amount">$15<span>/month</span></div>
-        <p class="pricing-desc">Everything you need to check and generate NDIS invoices.</p>
-        <p class="pricing-annual">Or $149/year — save $31</p>
-
-        <ul class="pricing-features">
-          <li><span class="material-symbols-outlined">check_circle</span> Unlimited invoice checks</li>
-          <li><span class="material-symbols-outlined">check_circle</span> Full 2025-26 NDIS catalogue (671 items)</li>
-          <li><span class="material-symbols-outlined">check_circle</span> Participant & budget management</li>
-          <li><span class="material-symbols-outlined">check_circle</span> Invoice PDF generation</li>
-          <li><span class="material-symbols-outlined">check_circle</span> PACE bulk CSV export</li>
-          <li><span class="material-symbols-outlined">check_circle</span> Price cap & GST validation</li>
-          <li><span class="material-symbols-outlined">check_circle</span> Regional & day-type rate checks</li>
-          <li><span class="material-symbols-outlined">check_circle</span> Duplicate invoice detection</li>
-          <li><span class="material-symbols-outlined">check_circle</span> Database backup & export</li>
-          <li><span class="material-symbols-outlined">check_circle</span> Free catalogue updates</li>
-        </ul>
-
-        <a href="#download" class="btn btn-primary btn-lg" style="width: 100%; justify-content: center;">
-          <span class="material-symbols-outlined">notifications_active</span>
-          Get Notified at Launch
-        </a>
-        <p style="font-size: 12px; color: var(--text-muted); margin-top: 12px;">Coming soon. 7-day free trial at launch. No credit card required.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="cta" id="download">
-    <div class="container">
-      <h2>Ready to simplify NDIS invoicing?</h2>
-      <p>Flowely is coming soon for macOS and Windows. Leave your email to be notified at launch.</p>
-      <form id="notify-form" class="notify-form">
-        <input id="notify-email" class="notify-input" type="email" placeholder="your@email.com" required />
-        <button type="submit" id="notify-btn" class="btn btn-primary btn-lg notify-btn">
-          Notify Me
-        </button>
-      </form>
-      <p id="notify-msg" style="font-size: 13px; margin-top: 12px; min-height: 20px;"></p>
-      <div class="platform-list">
-        <div class="platform-item">
-          <span class="material-symbols-outlined" style="font-size: 20px;">laptop_mac</span>
-          <span style="font-size: 14px;">macOS — Coming Soon</span>
-        </div>
-        <div class="platform-item">
-          <span class="material-symbols-outlined" style="font-size: 20px;">laptop_windows</span>
-          <span style="font-size: 14px;">Windows — Coming Soon</span>
+        <div class="metrics">
+          <div class="metric-card">
+            <strong>671</strong>
+            <span>Support catalogue items checked against the 2025-26 catalogue copy used by the app.</span>
+          </div>
+          <div class="metric-card">
+            <strong>15</strong>
+            <span>Budget categories tracked so remaining funds are easier to see before billing.</span>
+          </div>
+          <div class="metric-card">
+            <strong>Offline</strong>
+            <span>Designed so sensitive participant information is not forced into a cloud dashboard.</span>
+          </div>
+          <div class="metric-card">
+            <strong>PACE ready</strong>
+            <span>Export workflows built for compliant CSV output after validation, not before.</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
+    <section class="section" id="product">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">
+            <span class="material-symbols-outlined" style="font-size: 18px;">priority_high</span>
+            Why providers need this
+          </div>
+          <h2>Most invoicing stress comes from small errors that are hard to spot early.</h2>
+          <p>Flowely is built around the moments where providers lose time: checking item codes, second-guessing rates, fixing participant details, and cleaning exports after the fact.</p>
+        </div>
+
+        <div class="problem-grid">
+          <article class="problem-card">
+            <div class="icon">
+              <span class="material-symbols-outlined">rule</span>
+            </div>
+            <h3>Support item confusion</h3>
+            <p>When codes, claim types, and day types are entered under pressure, small mismatches become costly rework later.</p>
+          </article>
+          <article class="problem-card">
+            <div class="icon">
+              <span class="material-symbols-outlined">payments</span>
+            </div>
+            <h3>Rate uncertainty</h3>
+            <p>Regional caps, GST treatment, and pricing rules are easy to get wrong when you are stitching workflows together manually.</p>
+          </article>
+          <article class="problem-card">
+            <div class="icon">
+              <span class="material-symbols-outlined">privacy</span>
+            </div>
+            <h3>Privacy tradeoffs</h3>
+            <p>Many provider tools assume cloud storage by default, even when participant data sensitivity makes that uncomfortable.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="surface showcase">
+          <div class="showcase-copy">
+            <div class="eyebrow">
+              <span class="material-symbols-outlined" style="font-size: 18px;">dashboard</span>
+              Product-aligned workflow
+            </div>
+            <h2>A calmer desktop workflow for checking, correcting, and exporting with confidence.</h2>
+            <p>The app UI already feels focused and deliberate. The landing page should promise the same thing: fewer tabs, fewer spreadsheets, fewer second guesses before you send an invoice out.</p>
+            <div class="check-list">
+              <div class="check-list-item">
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Store participants, plan details, and billing information so the right data is easier to reuse.</span>
+              </div>
+              <div class="check-list-item">
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>See validation feedback before generating PDFs or exporting PACE-ready CSV files.</span>
+              </div>
+              <div class="check-list-item">
+                <span class="material-symbols-outlined">check_circle</span>
+                <span>Track budgets and invoice status in one product instead of piecing the process together manually.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="showcase-panel">
+            <div class="showcase-header">
+              <div class="showcase-title">
+                <strong>What Flowely checks</strong>
+                <span>Designed around the real review workflow</span>
+              </div>
+              <div class="window-badge">Desktop first</div>
+            </div>
+            <div class="showcase-list">
+              <div class="showcase-row">
+                <div>
+                  <strong>Support item and pricing</strong>
+                  <span>Match codes, caps, GST, and day type</span>
+                </div>
+                <div><span>Before invoice export</span></div>
+                <div><span class="status-pill ok">Checked</span></div>
+              </div>
+              <div class="showcase-row">
+                <div>
+                  <strong>Participant and plan details</strong>
+                  <span>Reuse saved records and reduce manual re-entry</span>
+                </div>
+                <div><span>Before submission</span></div>
+                <div><span class="status-pill ok">Verified</span></div>
+              </div>
+              <div class="showcase-row">
+                <div>
+                  <strong>PACE and accounting export prep</strong>
+                  <span>Prepare clean CSV and PDF outputs from the same source</span>
+                </div>
+                <div><span>At export stage</span></div>
+                <div><span class="status-pill warn">Review ready</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">
+            <span class="material-symbols-outlined" style="font-size: 18px;">widgets</span>
+            Core features
+          </div>
+          <h2>Built around the practical work NDIS providers actually do.</h2>
+          <p>Not a generic admin suite. Flowely focuses on invoice accuracy, participant records, budget visibility, and export confidence.</p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="icon">
+              <span class="material-symbols-outlined">fact_check</span>
+            </div>
+            <h3>Invoice compliance checks</h3>
+            <p>Validate support item codes, quantities, GST, and line details against the official support catalogue data used inside the app.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon gold">
+              <span class="material-symbols-outlined">attach_money</span>
+            </div>
+            <h3>Regional price cap validation</h3>
+            <p>Flag pricing that exceeds national, remote, or very remote rate limits before the invoice goes out.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon navy">
+              <span class="material-symbols-outlined">group</span>
+            </div>
+            <h3>Participant management</h3>
+            <p>Store participant records, NDIS numbers, plan dates, and management details so invoicing starts with cleaner data.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon">
+              <span class="material-symbols-outlined">account_balance_wallet</span>
+            </div>
+            <h3>Budget tracking</h3>
+            <p>Monitor allocated and used budget across support categories so remaining funds are visible while you work.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon navy">
+              <span class="material-symbols-outlined">picture_as_pdf</span>
+            </div>
+            <h3>Invoice PDF generation</h3>
+            <p>Create clean invoice PDFs with provider details, participant details, line items, and totals from the same workspace.</p>
+          </article>
+          <article class="feature-card">
+            <div class="icon gold">
+              <span class="material-symbols-outlined">upload_file</span>
+            </div>
+            <h3>PACE CSV export</h3>
+            <p>Export invoice data in a format designed for PACE-ready workflows after you have reviewed issues, not before.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="workflow">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">
+            <span class="material-symbols-outlined" style="font-size: 18px;">account_tree</span>
+            How it works
+          </div>
+          <h2>From first line item to ready-to-export invoice in a cleaner sequence.</h2>
+          <p>The workflow is designed to reduce rework by catching problems while you are still inside the invoice, not after it has already been sent or exported.</p>
+        </div>
+
+        <div class="workflow-grid">
+          <article class="workflow-step" data-step="1">
+            <h3>Build the invoice</h3>
+            <p>Enter codes, rates, quantities, and service dates with participant details already close at hand.</p>
+          </article>
+          <article class="workflow-step" data-step="2">
+            <h3>Validate the details</h3>
+            <p>Check support item matches, GST, price caps, and claim-specific details against Flowely's catalogue data.</p>
+          </article>
+          <article class="workflow-step" data-step="3">
+            <h3>Review budgets and status</h3>
+            <p>See whether the invoice makes sense in context before it becomes a PDF, CSV export, or paid record.</p>
+          </article>
+          <article class="workflow-step" data-step="4">
+            <h3>Export with confidence</h3>
+            <p>Generate invoice PDFs and PACE-ready CSV outputs from the same validated record.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="trust-panel">
+          <div>
+            <div class="eyebrow" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.12); color: #6ee7b7;">
+              <span class="material-symbols-outlined" style="font-size: 18px;">shield_lock</span>
+              Privacy and trust
+            </div>
+            <h2>Private, desktop-first software for providers who do not want participant data floating around unnecessary systems.</h2>
+            <p>Flowely keeps the product grounded in a simple promise: help you invoice accurately without forcing sensitive participant information into a cloud-heavy workflow.</p>
+          </div>
+          <div class="trust-grid">
+            <div class="trust-item">
+              <strong>Offline-capable workflow</strong>
+              <span>Use the app without making constant connectivity part of your invoicing process.</span>
+            </div>
+            <div class="trust-item">
+              <strong>No account required to understand the product</strong>
+              <span>The value proposition is accuracy, privacy, and calm workflow design, not data capture for its own sake.</span>
+            </div>
+            <div class="trust-item">
+              <strong>Built for Australian provider realities</strong>
+              <span>Flowely is intentionally narrow: invoice correctness, participant records, budgets, and exports.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="surface pricing-shell">
+          <div class="pricing-copy">
+            <div class="eyebrow">
+              <span class="material-symbols-outlined" style="font-size: 18px;">sell</span>
+              Simple pricing
+            </div>
+            <h2>One plan for providers who want clarity, not enterprise bloat.</h2>
+            <p>Flowely is designed to replace patchy manual workflows with a focused desktop tool that handles validation, participant records, budgets, and exports in one place.</p>
+          </div>
+
+          <div class="pricing-card">
+            <div class="pricing-badge">
+              <span class="material-symbols-outlined" style="font-size: 16px;">star</span>
+              Launch pricing
+            </div>
+            <div class="pricing-value">
+              <strong>$15</strong>
+              <span>/month</span>
+            </div>
+            <p class="pricing-note">Everything needed to check, generate, and prepare NDIS invoices with more confidence.</p>
+            <div class="pricing-save">Or $149/year and save $31</div>
+            <ul class="pricing-list">
+              <li><span class="material-symbols-outlined">check_circle</span><span>Unlimited invoice validation checks</span></li>
+              <li><span class="material-symbols-outlined">check_circle</span><span>2025-26 support catalogue reference data inside the app</span></li>
+              <li><span class="material-symbols-outlined">check_circle</span><span>Participant records and budget tracking</span></li>
+              <li><span class="material-symbols-outlined">check_circle</span><span>Invoice PDF generation and export workflows</span></li>
+              <li><span class="material-symbols-outlined">check_circle</span><span>PACE CSV export support</span></li>
+              <li><span class="material-symbols-outlined">check_circle</span><span>Free catalogue updates during your subscription</span></li>
+            </ul>
+            <a href="#download" class="btn btn-primary" style="width: 100%;">
+              <span class="material-symbols-outlined">notifications_active</span>
+              Join waitlist
+            </a>
+            <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">Coming soon with a 7-day free trial at launch. No credit card required to start the trial.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="download">
+      <div class="container">
+        <div class="cta">
+          <div class="eyebrow" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.12); color: #d1fae5;">
+            <span class="material-symbols-outlined" style="font-size: 18px;">rocket_launch</span>
+            Coming soon
+          </div>
+          <h2>Be first to know when Flowely launches for macOS and Windows.</h2>
+          <p>Join the waitlist for launch updates, early access news, and product milestones as Flowely gets ready for providers.</p>
+
+          <form id="notify-form" class="notify-form">
+            <input id="notify-email" class="notify-input" type="email" placeholder="your@email.com" required />
+            <button type="submit" id="notify-btn" class="btn notify-btn">
+              Notify me
+            </button>
+          </form>
+          <p id="notify-msg" class="notify-msg"></p>
+
+          <div class="platform-list">
+            <div class="platform-item">
+              <span class="material-symbols-outlined" style="font-size: 18px;">laptop_mac</span>
+              macOS desktop app
+            </div>
+            <div class="platform-item">
+              <span class="material-symbols-outlined" style="font-size: 18px;">laptop_windows</span>
+              Windows desktop app
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <footer>
     <div class="container">
-      <p>&copy; 2026 Flowely. Built in Australia for NDIS providers.</p>
+      <p class="footer-copy">© 2026 Flowely. Built in Australia for NDIS providers.</p>
       <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms</a>
@@ -642,68 +1587,68 @@
   </footer>
 
   <script>
-    const nav = document.querySelector('nav');
-    const navToggle = document.querySelector('.nav-toggle');
-    const navLinks = document.getElementById('nav-links');
+    const nav = document.querySelector("nav");
+    const navToggle = document.querySelector(".nav-toggle");
+    const navLinks = document.getElementById("nav-links");
 
     const closeMenu = () => {
-      nav.classList.remove('menu-open');
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.setAttribute('aria-label', 'Open navigation menu');
-      navToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+      nav.classList.remove("menu-open");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Open navigation menu");
+      navToggle.querySelector(".material-symbols-outlined").textContent = "menu";
     };
 
-    navToggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('menu-open');
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-      navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
-      navToggle.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
+    navToggle.addEventListener("click", () => {
+      const isOpen = nav.classList.toggle("menu-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+      navToggle.querySelector(".material-symbols-outlined").textContent = isOpen ? "close" : "menu";
     });
 
-    navLinks.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', () => {
-        if (window.innerWidth <= 768) closeMenu();
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 820) closeMenu();
       });
     });
 
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) closeMenu();
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 820) closeMenu();
     });
 
-    document.getElementById('notify-form').addEventListener('submit', async (e) => {
+    document.getElementById("notify-form").addEventListener("submit", async (e) => {
       e.preventDefault();
-      const email = document.getElementById('notify-email').value.trim();
-      const btn = document.getElementById('notify-btn');
-      const msg = document.getElementById('notify-msg');
+      const email = document.getElementById("notify-email").value.trim();
+      const btn = document.getElementById("notify-btn");
+      const msg = document.getElementById("notify-msg");
       if (!email) return;
 
-      btn.textContent = 'Sending...';
+      btn.textContent = "Sending...";
       btn.disabled = true;
-      msg.textContent = '';
-      msg.style.color = '';
+      msg.textContent = "";
+      msg.style.color = "";
 
       try {
-        const res = await fetch('/api/notify', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
+        const res = await fetch("/api/notify", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email })
         });
         const data = await res.json();
         if (res.ok) {
-          msg.textContent = "You're on the list! Check your inbox for a confirmation.";
-          msg.style.color = '#34d399';
-          document.getElementById('notify-email').value = '';
-          btn.textContent = 'Subscribed!';
+          msg.textContent = "You're on the list. Check your inbox for a confirmation.";
+          msg.style.color = "#bbf7d0";
+          document.getElementById("notify-email").value = "";
+          btn.textContent = "Subscribed";
         } else {
-          msg.textContent = data.error || 'Something went wrong. Try again.';
-          msg.style.color = '#f87171';
-          btn.textContent = 'Notify Me';
+          msg.textContent = data.error || "Something went wrong. Please try again.";
+          msg.style.color = "#fecaca";
+          btn.textContent = "Notify me";
           btn.disabled = false;
         }
       } catch {
-        msg.textContent = 'Network error. Please try again.';
-        msg.style.color = '#f87171';
-        btn.textContent = 'Notify Me';
+        msg.textContent = "Network error. Please try again.";
+        msg.style.color = "#fecaca";
+        btn.textContent = "Notify me";
         btn.disabled = false;
       }
     });
