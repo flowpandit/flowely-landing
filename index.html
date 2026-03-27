@@ -91,11 +91,20 @@
       padding: 12px 0;
     }
     nav .container { display: flex; align-items: center; justify-content: space-between; }
+    .nav-main { display: flex; align-items: center; gap: 20px; }
     .nav-brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 18px; color: var(--text); }
     .nav-brand img { width: 32px; height: 32px; border-radius: 8px; }
     .nav-links { display: flex; align-items: center; gap: 32px; }
     .nav-links a { font-size: 14px; font-weight: 500; color: var(--text-secondary); transition: color 150ms; }
     .nav-links a:hover { color: var(--accent); }
+    .nav-toggle {
+      display: none; align-items: center; justify-content: center;
+      width: 44px; height: 44px; border-radius: 12px;
+      border: 1px solid var(--border); background: var(--bg);
+      color: var(--text); cursor: pointer; transition: all 150ms;
+    }
+    .nav-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-toggle .material-symbols-outlined { font-size: 24px; }
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 10px 22px; border-radius: 9999px; font-size: 14px; font-weight: 600;
@@ -220,24 +229,169 @@
     .cta p { font-size: 16px; opacity: 0.85; margin-bottom: 32px; }
     .cta .btn-primary { background: #fff; color: var(--accent); }
     .cta .btn-primary:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .notify-form {
+      display: flex; gap: 12px; justify-content: center;
+      max-width: 480px; margin: 0 auto;
+    }
+    .notify-input {
+      flex: 1; min-width: 0;
+      padding: 14px 20px; border-radius: 9999px;
+      border: 2px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.1); color: #fff;
+      font-size: 15px; outline: none; font-family: inherit;
+    }
+    .notify-input::placeholder { color: rgba(255,255,255,0.72); }
+    .notify-btn { background: #fff; color: var(--accent); flex-shrink: 0; }
+    .platform-list {
+      display: flex; gap: 24px; justify-content: center;
+      margin-top: 24px; flex-wrap: wrap;
+    }
+    .platform-item {
+      display: flex; align-items: center; gap: 8px;
+      opacity: 0.7;
+    }
+
+    .pricing-annual {
+      font-size: 14px; color: var(--accent);
+      font-weight: 600; margin-bottom: 24px;
+    }
+
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
 
     /* Footer */
     footer { padding: 40px 0; border-top: 1px solid var(--border); }
-    footer .container { display: flex; align-items: center; justify-content: space-between; }
+    footer .container {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
     footer p { font-size: 13px; color: var(--text-muted); }
     footer a { color: var(--text-muted); }
     footer a:hover { color: var(--accent); }
 
     /* Responsive */
+    @media (max-width: 1024px) {
+      .hero { padding: 88px 0 72px; }
+      .hero h1 { font-size: 44px; max-width: 680px; }
+      .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps { grid-template-columns: repeat(2, 1fr); gap: 28px; }
+      .privacy-box { gap: 28px; padding: 40px; }
+      .nav-links { gap: 20px; }
+    }
+
     @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .section { padding: 64px 0; }
+      nav { padding: 14px 0; }
+      nav .container {
+        align-items: center;
+      }
+      .nav-main {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .nav-brand { justify-content: flex-start; }
+      .nav-toggle { display: inline-flex; }
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        margin-top: 14px;
+        padding-top: 14px;
+        border-top: 1px solid var(--border);
+      }
+      nav.menu-open .container {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      nav.menu-open .nav-links { display: flex; }
+      .nav-links a {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 12px 16px;
+        border-radius: 14px;
+        background: var(--bg-alt);
+      }
+      .nav-links a:not(.btn) { font-size: 13px; }
+      .nav-links .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .hero { padding: 72px 0 64px; }
       .hero h1 { font-size: 32px; }
       .hero p { font-size: 16px; }
+      .hero-actions {
+        flex-direction: column;
+        margin-bottom: 36px;
+      }
+      .hero-actions .btn {
+        width: min(100%, 360px);
+        justify-content: center;
+      }
+      .hero-screenshot { border-radius: 14px; }
+      .features-header { margin-bottom: 40px; }
+      .features-header h2 { font-size: 30px; }
       .features-grid { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: repeat(2, 1fr); }
+      .feature-card { padding: 24px; }
+      .steps { grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 40px; }
       .privacy-box { flex-direction: column; text-align: center; padding: 32px; }
       .privacy-checks { flex-direction: column; align-items: center; }
-      .hero-actions { flex-direction: column; }
-      .nav-links { gap: 16px; }
+      .pricing-card { padding: 32px; }
+      .pricing-amount { font-size: 48px; }
+      .cta { padding: 64px 0; }
+      .cta h2 { font-size: 30px; }
+      .notify-form {
+        flex-direction: column;
+        max-width: 420px;
+      }
+      .notify-btn { width: 100%; justify-content: center; }
+      footer .container {
+        flex-direction: column;
+        text-align: center;
+      }
+      .footer-links { justify-content: center; }
+    }
+
+    @media (max-width: 560px) {
+      .container { padding: 0 16px; }
+      .section { padding: 56px 0; }
+      .btn, .btn-lg {
+        width: 100%;
+        justify-content: center;
+      }
+      .hero-badge {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 14px;
+      }
+      .hero h1 { font-size: 28px; }
+      .hero p { font-size: 15px; margin-bottom: 28px; }
+      .hero-note { line-height: 1.5; }
+      .features-header h2,
+      .cta h2,
+      .privacy-box h2 { font-size: 26px; }
+      .steps { grid-template-columns: 1fr; }
+      .step { padding: 0 8px; }
+      .privacy-box { padding: 24px 20px; }
+      .privacy-box .icon-big {
+        width: 68px;
+        height: 68px;
+      }
+      .pricing-card { padding: 28px 20px; }
+      .pricing-amount { font-size: 42px; }
+      .pricing-features li { align-items: flex-start; }
+      .notify-input { width: 100%; }
+      .platform-list {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+      .footer-links {
+        flex-direction: column;
+        gap: 12px;
+      }
     }
   </style>
 </head>
@@ -246,11 +400,16 @@
   <!-- Nav -->
   <nav>
     <div class="container">
-      <a href="#" class="nav-brand">
-        <img src="public/flowely-nav-lightmode.png" alt="Flowely" />
-        Flowely
-      </a>
-      <div class="nav-links">
+      <div class="nav-main">
+        <a href="#" class="nav-brand">
+          <img src="public/flowely-nav-lightmode.png" alt="Flowely" />
+          Flowely
+        </a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+      </div>
+      <div class="nav-links" id="nav-links">
         <a href="#features">Features</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#pricing">Pricing</a>
@@ -421,7 +580,7 @@
         <div class="pricing-badge">Most Popular</div>
         <div class="pricing-amount">$15<span>/month</span></div>
         <p class="pricing-desc">Everything you need to check and generate NDIS invoices.</p>
-        <p style="font-size: 14px; color: var(--accent); font-weight: 600; margin-bottom: 24px;">Or $149/year — save $31</p>
+        <p class="pricing-annual">Or $149/year — save $31</p>
 
         <ul class="pricing-features">
           <li><span class="material-symbols-outlined">check_circle</span> Unlimited invoice checks</li>
@@ -450,19 +609,19 @@
     <div class="container">
       <h2>Ready to simplify NDIS invoicing?</h2>
       <p>Flowely is coming soon for macOS and Windows. Leave your email to be notified at launch.</p>
-      <form id="notify-form" style="display: flex; gap: 12px; justify-content: center; max-width: 480px; margin: 0 auto;">
-        <input id="notify-email" type="email" placeholder="your@email.com" required style="flex: 1; padding: 14px 20px; border-radius: 9999px; border: 2px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #fff; font-size: 15px; outline: none; font-family: inherit;" />
-        <button type="submit" id="notify-btn" class="btn btn-primary btn-lg" style="background: #fff; color: var(--accent); flex-shrink: 0;">
+      <form id="notify-form" class="notify-form">
+        <input id="notify-email" class="notify-input" type="email" placeholder="your@email.com" required />
+        <button type="submit" id="notify-btn" class="btn btn-primary btn-lg notify-btn">
           Notify Me
         </button>
       </form>
       <p id="notify-msg" style="font-size: 13px; margin-top: 12px; min-height: 20px;"></p>
-      <div style="display: flex; gap: 24px; justify-content: center; margin-top: 24px;">
-        <div style="display: flex; align-items: center; gap: 8px; opacity: 0.7;">
+      <div class="platform-list">
+        <div class="platform-item">
           <span class="material-symbols-outlined" style="font-size: 20px;">laptop_mac</span>
           <span style="font-size: 14px;">macOS — Coming Soon</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 8px; opacity: 0.7;">
+        <div class="platform-item">
           <span class="material-symbols-outlined" style="font-size: 20px;">laptop_windows</span>
           <span style="font-size: 14px;">Windows — Coming Soon</span>
         </div>
@@ -474,7 +633,7 @@
   <footer>
     <div class="container">
       <p>&copy; 2026 Flowely. Built in Australia for NDIS providers.</p>
-      <div style="display: flex; gap: 24px;">
+      <div class="footer-links">
         <a href="privacy.html">Privacy Policy</a>
         <a href="terms.html">Terms</a>
         <a href="mailto:contact@flowely.com.au">contact@flowely.com.au</a>
@@ -483,6 +642,34 @@
   </footer>
 
   <script>
+    const nav = document.querySelector('nav');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    const closeMenu = () => {
+      nav.classList.remove('menu-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open navigation menu');
+      navToggle.querySelector('.material-symbols-outlined').textContent = 'menu';
+    };
+
+    navToggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('menu-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+      navToggle.querySelector('.material-symbols-outlined').textContent = isOpen ? 'close' : 'menu';
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) closeMenu();
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+
     document.getElementById('notify-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       const email = document.getElementById('notify-email').value.trim();
